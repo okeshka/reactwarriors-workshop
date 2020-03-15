@@ -2,7 +2,7 @@ import React from "react";
 
 class MovieItem extends React.Component {
   state = {
-    willWatch: false
+    willWatch: false,
   };
 
   render() {
