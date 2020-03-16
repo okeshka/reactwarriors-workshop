@@ -20,11 +20,21 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    return (
+      this.getMovies();
+    }
+
+    componentDidUpdate(prevProps, prefState) {
+      if (prefState.sort_by !== this.state.sort_by) {
+        this.getMovies();
+    }
+    }
+
+    getMovies = () => {
       fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}`)
       .then(responce => responce.json())
       .then(data => this.setState({movies: data.results}))
-    )}
+    }
+
   upDateSortBy = value => {
     return (
       this.setState({sort_by: value})
