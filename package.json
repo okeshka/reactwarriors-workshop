@@ -1,5 +1,6 @@
 {
   "name": "reactwarriors-workshop",
+  "homepage": "http://okeshka.github.io/reactwarriors-workshop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,5 +35,4 @@
   "devDependencies": {
     "gh-pages": "^2.2.0"
   }
-  "homepage": "http://okeshka.github.io/reactwarriors-workshop"
 }

@@ -3,6 +3,7 @@ import React from "react";
 import MovieItem from "./MovieItem";
 import {API_URL, API_KEY_3} from "../utils/api";
 import MovieTabs from "./MovieTabs";
+import MoviePage from "./MoviePage";
 
 // UI = fn(state, props)
 
@@ -11,28 +12,36 @@ import MovieTabs from "./MovieTabs";
 class App extends React.Component {
   constructor() {
     super();
-
+    console.log("constructor");
     this.state = {
       movies: [],
       moviesWillWatch: [],
       sort_by: "popularity.desc",
+      page: 1,
+      total: 0,
     };
   }
+  
 
   componentDidMount() {
+    console.log("componentDidMount");
       this.getMovies();
     }
 
     componentDidUpdate(prevProps, prefState) {
-      if (prefState.sort_by !== this.state.sort_by) {
+      console.log("componentDidUpdate");
+      if (prefState.sort_by !== this.state.sort_by || prefState.page !== this.state.page) {
         this.getMovies();
+        
     }
     }
 
-    getMovies = () => {
-      fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}`)
+  getMovies = () => {
+    
+      fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}&page=${this.state.page}`)
       .then(responce => responce.json())
-      .then(data => this.setState({movies: data.results}))
+      .then(data => this.setState({movies: data.results, total: data.total_pages}));
+      
     }
 
   upDateSortBy = value => {
@@ -40,6 +49,19 @@ class App extends React.Component {
       this.setState({sort_by: value})
     )
   }
+
+  getNextPage = () => {
+     if (this.state.page === this.state.total) return "";
+     return this.setState({page: this.state.page + 1});
+     
+  }  
+
+  getPrevPage = () => {
+    
+    if (this.state.page === 1 ) return ""; 
+    return this.setState({page: this.state.page - 1});
+    
+  }  
 
   deleteMovie = movie => {
     console.log(movie.id);
@@ -71,7 +93,7 @@ class App extends React.Component {
   };
 
   render() {
-    console.log("render", this);
+    console.log("render");
     return (
       <div className="container">
         <div className="row mt-4">
@@ -112,6 +134,13 @@ class App extends React.Component {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+        <div className = "row mb-4">
+          <div className = "col-9">
+            <MoviePage page={this.state.page} getNextPage = {this.getNextPage}  getPrevPage = {this.getPrevPage}
+              total = {this.state.total}
+            />
           </div>
         </div>
       </div>
