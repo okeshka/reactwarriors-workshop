@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/reactwarriors-workshop/static/css/main.cab8b1b3.chunk.css",
-    "main.js": "/reactwarriors-workshop/static/js/main.040bc919.chunk.js",
-    "main.js.map": "/reactwarriors-workshop/static/js/main.040bc919.chunk.js.map",
+    "main.js": "/reactwarriors-workshop/static/js/main.3555db0e.chunk.js",
+    "main.js.map": "/reactwarriors-workshop/static/js/main.3555db0e.chunk.js.map",
     "runtime-main.js": "/reactwarriors-workshop/static/js/runtime-main.2a191a5d.js",
     "runtime-main.js.map": "/reactwarriors-workshop/static/js/runtime-main.2a191a5d.js.map",
     "static/css/2.de424728.chunk.css": "/reactwarriors-workshop/static/css/2.de424728.chunk.css",
     "static/js/2.97862457.chunk.js": "/reactwarriors-workshop/static/js/2.97862457.chunk.js",
     "static/js/2.97862457.chunk.js.map": "/reactwarriors-workshop/static/js/2.97862457.chunk.js.map",
     "index.html": "/reactwarriors-workshop/index.html",
-    "precache-manifest.165331f7a950b0e67881cc571e4f2fa0.js": "/reactwarriors-workshop/precache-manifest.165331f7a950b0e67881cc571e4f2fa0.js",
+    "precache-manifest.15f82e185df0e4b4000f4012dc49e55d.js": "/reactwarriors-workshop/precache-manifest.15f82e185df0e4b4000f4012dc49e55d.js",
     "service-worker.js": "/reactwarriors-workshop/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/reactwarriors-workshop/static/css/2.de424728.chunk.css.map",
     "static/css/main.cab8b1b3.chunk.css.map": "/reactwarriors-workshop/static/css/main.cab8b1b3.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.de424728.chunk.css",
     "static/js/2.97862457.chunk.js",
     "static/css/main.cab8b1b3.chunk.css",
-    "static/js/main.040bc919.chunk.js"
+    "static/js/main.3555db0e.chunk.js"
   ]
 }
